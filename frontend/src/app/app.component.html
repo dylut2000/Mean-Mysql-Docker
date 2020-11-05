@@ -1,0 +1,17 @@
+<h1>Hello Angular, Nodejs && Sql ;)</h1>
+
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let job of jobs">
+      <td>{{ job.title }}</td>
+      <td>{{ job.description }}</td>
+    </tr>
+  </table>
+
+</div>
+
+<router-outlet></router-outlet>
