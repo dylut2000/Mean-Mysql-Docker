@@ -10,7 +10,12 @@ COPY package.json /usr/src/app
 RUN npm install
 # Get all the code needed to run the app
 COPY . /usr/src/app
+# build angular project
+RUN npm run build --prod
+# remove node_module
+RUN rm -rf node_modules
+RUN npm i express
 # Expose the port the app runs in
 EXPOSE 4200
 # Serve the app
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
